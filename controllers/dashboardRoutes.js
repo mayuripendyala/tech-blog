@@ -9,9 +9,9 @@ router.get('/',withAuth,async(req,res)=>{
     try{
         const posts= await Post.findAll({
             where:{
-                userId =req.session.userId
+                userId : req.session.userId
             }
-        });
+        })
         if(!posts){
             res.status(200).json({message :'posts not found!'});
             return;
@@ -31,15 +31,24 @@ router.get('/',withAuth,async(req,res)=>{
 
     });
 
-    // router.get ('/edit/:id',withAuth ,async(req,res)=>{
-    //     try{
-    //         const post = await Post.findByPk((req.params.id),{
-    //             where
+router.get ('/edit/:id',withAuth ,async(req,res)=>{
+        try{
+            const postData = await Post.findByPk(req.params.id);
             
-    //         });
-
-    //     }
+            if(postData){
+                const post =postData.get({plain:true});
+                res.render("edit-post",{
+                    layout:"dashboard",
+                    post
+                });
+            }else {
+                res.status(404).end();
+            }
+        }
+        catch(err) {
+            res.status(500).json(err);
+          }
         
-    // })
+ });
 
     module.exports =router;

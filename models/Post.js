@@ -1,4 +1,4 @@
-const { Model, DataType } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt =require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -6,8 +6,8 @@ const sequelize = require('../config/connection');
 class Post extends Model {}
 
 Post.init({
-    title:DataType.STRING,
-    body:DataType.STRING
+    title:DataTypes.STRING,
+    body:DataTypes.STRING
 },
 {
     sequelize
