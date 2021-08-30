@@ -1,7 +1,7 @@
-const logout = async () =>{
+const logout =  () =>{
     try{
-        const response =   await fetch("/api/user/logout",{
-            method:"POST",
+        const response =  fetch("/api/user/logout",{
+            method:"post",
             headers:{"Content-Type" :"application/json"}
         });
 

@@ -13,7 +13,7 @@ const newFormHandler = async (event) => {
             }),
             headers:{"Content-Type" :"application/json" , authorization: `Bearer${token}`}
         });
-        document.location.replace("/dashbpard");
+        document.location.replace("/dashboard");
     }
     catch(err){
         console.log(err);
