@@ -15,3 +15,5 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 # Links
 [Repository: https://github.com/mayuripendyala/tech-blog](https://github.com/mayuripendyala/tech-blog)
 
+[Deployed Site: https://mayuri-tech-blog.herokuapp.com/](https://mayuri-tech-blog.herokuapp.com/)
+
